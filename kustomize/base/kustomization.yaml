@@ -1,0 +1,19 @@
+resources:
+- deployment.yaml
+- service.yaml
+
+
+commonLabels:
+  app: patients
+  tier: frontend
+  
+#~ commonAnnotations:
+  #~ app: mykustom-annontations
+
+#~ namePrefix:
+  #~ kustom-
+
+#~ nameSuffix:
+  #~ -v1
+
+
