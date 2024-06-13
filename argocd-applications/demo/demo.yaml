@@ -9,7 +9,7 @@ metadata:
     #~ - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd-image-updater.argoproj.io/image-list: patients=docker.io/kamranazeem/patients
-    argocd-image-updater.argoproj.io/patients.update-strategy: semver
+    argocd-image-updater.argoproj.io/patients.update-strategy: name
     #argocd-image-updater.argoproj.io/patients.allow-tags: regexp:^1.0.0-[a-zA-Z0-9]+$
     argocd-image-updater.argoproj.io/patients.allow-tags: regexp:^v[0-9]+.[0-9]+.[0-9]+-rc[0-9]+$
     argocd-image-updater.argoproj.io/patients.force-update: "true"
