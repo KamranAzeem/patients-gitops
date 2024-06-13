@@ -1,3 +1,3 @@
 kustomize:
   images:
-  - docker.io/kamranazeem/patients:095d574
+  - docker.io/kamranazeem/patients:fc2290f
