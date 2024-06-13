@@ -1,3 +1,0 @@
-kustomize:
-  images:
-  - docker.io/kamranazeem/patients:5c16893
