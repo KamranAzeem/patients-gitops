@@ -1,0 +1,31 @@
+# patient-argocd-dev
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: patients-demo
+  namespace: argocd
+  #~ finalizers:
+    #~ - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: patients=docker.io/kamranazeem/patients
+    argocd-image-updater.argoproj.io/patient.update-strategy: semver
+    #argocd-image-updater.argoproj.io/patient.allow-tags: regexp:^1.0.0-[a-zA-Z0-9]+$
+    argocd-image-updater.argoproj.io/patient.allow-tags: regexp:^1.x.x-[a-zA-Z0-9]+$
+    argocd-image-updater.argoproj.io/patient.force-update: "true"
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/github-credentials
+    argocd-image-updater.argoproj.io/branch: master
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/kamranazeem/patients-gitops.git
+    targetRevision: HEAD
+    path: kustomize/overlays/demo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+      allowEmpty: true
