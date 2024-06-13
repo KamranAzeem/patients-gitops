@@ -1,0 +1,11 @@
+resources:
+- ../../base
+
+patches:
+- path: ./replicas.yaml
+
+configMapGenerator:
+- name: patients
+  env: variables.configmap
+  
+# The "image:" not shown here - will be updated by argocd using a special file.
