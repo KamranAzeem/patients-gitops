@@ -10,7 +10,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: patients=docker.io/kamranazeem/patients
     argocd-image-updater.argoproj.io/patients.update-strategy: latest
-    argocd-image-updater.argoproj.io/patients.allow-tags: regexp:^[0-9a-f]{7}$
+    argocd-image-updater.argoproj.io/patients.allow-tags: regexp:^[0-9a-f]{5,40}$
     argocd-image-updater.argoproj.io/patients.force-update: "true"
     argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/github-credentials
     argocd-image-updater.argoproj.io/branch: master
