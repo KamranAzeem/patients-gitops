@@ -14,4 +14,11 @@ spec:
         - configMapRef:
             name: patients
         ports:
-        - containerPort: 8080
+        - containerPort: 4444
+        resources:
+          requests:
+            cpu: "5m"
+            memory: "16Mi"
+          limits:
+            cpu: "10m"
+            memory: "32Mi"

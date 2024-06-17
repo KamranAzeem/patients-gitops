@@ -3,4 +3,4 @@ kind: Deployment
 metadata:
   name: patients
 spec:
-  replicas: 1
+  replicas: 2
